@@ -1,6 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import * as api from './services/api';
+
+api.getCategories().then((categories) => {
+  console.log(categories);
+});
+
+api.getProductsFromCategoryAndQuery().then((categoryId, query) => {
+  console.log(categoryId, query);
+});
+
 
 function App() {
   return (
