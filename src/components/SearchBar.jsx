@@ -16,12 +16,6 @@ class SearchBar extends Component {
           data-testid="query-input"
           onChange={(e) => this.setState({ searchValue: e.target.value })}
         />
-        <button
-          type="button"
-          data-testid="query-button"
-        >
-          Pesquisar
-        </button>
         <p data-testid="home-initial-message">
           {searchValue.length === 0 && 'Digite algum termo de pesquisa ou escolha uma categoria.'}
         </p>
