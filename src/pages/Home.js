@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div>
         <SearchBar />
-        <Link data-testid="shopping-cart-button" to="/ShoppingCart">
+        <Link data-testid="shopping-cart-button" to="/shoppingcart">
           Carrinho de compras
         </Link>
       </div>
