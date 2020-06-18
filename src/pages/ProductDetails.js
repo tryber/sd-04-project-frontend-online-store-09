@@ -7,11 +7,11 @@ class ProductDetails extends React.Component {
     this.handleProduct(data);
   }
   render() {
-      return (
-          <div>
-              <p>teste</p>
-          </div>
-      )
+    return (
+      <div>
+        <p>teste</p>
+      </div>
+    );
   }
 }
 
