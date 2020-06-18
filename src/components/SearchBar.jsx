@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProductListing from './ProductListing';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class SearchBar extends Component {
         <p data-testid="home-initial-message">
           {searchValue.length === 0 && 'Digite algum termo de pesquisa ou escolha uma categoria.'}
         </p>
+        <ProductListing />
       </div>
     );
   }
