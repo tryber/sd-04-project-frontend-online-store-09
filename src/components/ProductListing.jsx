@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../services/api';
 
-function buttonDetails() {
+function buttonDetails(id) {
   return (
     <button type="button">
-      <Link data-testid="product-detail-link">VER DATALHES</Link>
+      <Link data-testid="product-detail-link" to={{ pathname: `/${id}/details` }}>
+        VER DATALHES
+      </Link>
     </button>
   );
 }
@@ -43,7 +45,7 @@ class ProductListing extends React.Component {
               R$
               {product.price}
             </p>
-            {buttonDetails()}
+            {buttonDetails(product.id)}
           </div>
         ))}
       </div>
