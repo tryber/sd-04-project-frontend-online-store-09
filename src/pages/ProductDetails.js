@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { getProduct } from '../services/api';
 
 class ProductDetails extends React.Component {
@@ -6,9 +6,7 @@ class ProductDetails extends React.Component {
     const data = await getProduct(this.props.match.params.productId);
     this.handleProduct(data);
   }
-  render() {
-    return;
-  }
+  render() {}
 }
 
 export default ProductDetails;
