@@ -43,7 +43,7 @@ class ProductListing extends React.Component {
             <img src={product.thumbnail} alt={product.title} />
             <p>
               R$
-              {product.price}
+              {product.price.toFixed(2)}
             </p>
             {buttonDetails(product.id)}
           </div>
