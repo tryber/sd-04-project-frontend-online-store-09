@@ -1,26 +1,58 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProductListing from './ProductListing';
 
-class SearchBar extends Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      item: '',
+      searchValue: false,
+    };
+    this.changeValue = this.changeValue.bind(this);
+  }
 
-    this.state = { searchValue: '' };
+  buttonSearch() {
+    this.setState({ searchValue: true });
+  }
+
+  changeValue(e) {
+    this.setState({
+      item: e.target.value,
+      searchValue: false,
+    });
+  }
+
+  renderSearchValue() {
+    return (
+      <center>
+        <input
+          data-testid="query-input"
+          type="text"
+          className="input"
+          onChange={this.changeValue}
+        />
+        <p data-testid="home-initial-message" className="texto-pesquisa">
+          Digite algum termo de pesquisa ou escolha uma categoria.
+        </p>
+      </center>
+    );
   }
 
   render() {
-    const { searchValue } = this.state;
+    const { item, searchValue } = this.state;
     return (
       <div>
-        <input
-          value={searchValue}
-          data-testid="query-input"
-          onChange={(e) => this.setState({ searchValue: e.target.value })}
-        />
-        <p data-testid="home-initial-message">
-          {searchValue.length === 0 && 'Digite algum termo de pesquisa ou escolha uma categoria.'}
-        </p>
-        <ProductListing />
+        <center>
+          <div className="top-bar">
+            <div className="searchbar">
+              {this.renderSearchValue()}
+              <button data-testid="query-button" type="button" onClick={() => this.buttonSearch()}>
+                PESQUISAR
+              </button>
+            </div>
+          </div>
+          <div className="product-sidebar">{searchValue && <ProductListing item={item} />}</div>
+        </center>
       </div>
     );
   }
