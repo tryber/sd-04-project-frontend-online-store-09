@@ -31,6 +31,7 @@ class ProductListing extends React.Component {
   }
 
   render() {
+    const { selectedCategory } = this.props;
     const { products, showProducts } = this.state;
     if (products.length === 0 && showProducts === true) {
       return <p>Nenhum produto foi encontrado</p>;

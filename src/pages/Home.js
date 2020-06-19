@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '../components/SearchBar';
 import CategoryPanel from '../components/CategoryPanel';
+import ProductList from '../components/ProductList';
+import '../styles/home.css';
 
 class Home extends Component {
   constructor(props) {
@@ -15,10 +16,11 @@ class Home extends Component {
   }
 
   render() {
+    const { selectedCategory } = this.state;
     return (
-      <div>
-        <SearchBar />
+      <div className="homepage">
         <CategoryPanel setCategory={this.setCategory} />
+        <ProductList selectedCategory={selectedCategory} />
         <Link data-testid="shopping-cart-button" to="/shoppingcart">
           Carrinho de compras
         </Link>
