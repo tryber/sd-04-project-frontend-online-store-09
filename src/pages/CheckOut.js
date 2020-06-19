@@ -36,7 +36,6 @@ class CheckOut extends Component {
         <label htmlFor="payment-method">
           <input
             type="radio"
-            name="boleto"
             id="payment-method"
             value={selectedPayment}
             onChange={(event) => this.selectedPayment(event.target.value)}
@@ -44,7 +43,6 @@ class CheckOut extends Component {
           Boleto
           <input
             type="radio"
-            name="cartao-debito"
             id="payment-method"
             value="cartao-debito"
             onChange={(event) => this.selectedPayment(event.target.value)}
@@ -52,7 +50,6 @@ class CheckOut extends Component {
           Cartão de Débito
           <input
             type="radio"
-            name="cartao-credito"
             id="payment-method"
             value="cartao-credito"
             onChange={(event) => this.selectedPayment(event.target.value)}
@@ -63,10 +60,10 @@ class CheckOut extends Component {
     );
   }
 
-  renderForms() {
-    const { fullname, email, cpf, phone, cep, address } = this.state;
+  renderFormsPersonal() {
+    const { fullname, email, cpf, phone } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <label htmlFor="name">
           Nome completo
           <input
@@ -111,6 +108,14 @@ class CheckOut extends Component {
             required
           />
         </label>
+      </div>
+    );
+  }
+
+  renderFormsAdress() {
+    const { cep, address } = this.state;
+    return (
+      <div>
         <label htmlFor="name">
           CEP
           <input
@@ -133,7 +138,7 @@ class CheckOut extends Component {
             required
           />
         </label>
-      </form>
+      </div>
     );
   }
 
@@ -144,14 +149,17 @@ class CheckOut extends Component {
   render() {
     return (
       <div>
-        {this.renderPaymentMethods()}
-        {this.renderForms()}
-        <Link to="/">
-          <button type="button">VOLTAR</button>
-        </Link>
-        {/* <button type="submit" onClick={this.renderAlert()}>
+        <form onSubmit={this.handleSubmit}>
+          {this.renderPaymentMethods()}
+          {this.renderFormsPersonal()}
+          {this.renderFormsAdress()}
+          <Link to="/">
+            <button type="button">VOLTAR</button>
+          </Link>
+          {/* <button type="submit" onClick={this.renderAlert()}>
           Confirmar Compras
         </button> */}
+        </form>
       </div>
     );
   }
