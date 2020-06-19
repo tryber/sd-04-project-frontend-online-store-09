@@ -14,7 +14,7 @@ class CategoryPanel extends Component {
 
   render() {
     const { categoryList } = this.state;
-    const { selectedCategory } = this.props;
+    const { setCategory } = this.props;
     return (
       <div>
         <p>Categorias: </p>
@@ -22,10 +22,10 @@ class CategoryPanel extends Component {
           <label key={line.id} htmlFor="input">
             <input
               type="radio"
-              name="cat"
+              name="line"
               value={line.id}
               data-testid="category"
-              onChange={(e) => selectedCategory(e.target.value)}
+              onChange={(e) => setCategory(e.target.value)}
 
             />
             {line.name}

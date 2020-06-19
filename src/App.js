@@ -15,6 +15,7 @@ class App extends React.Component {
           <Route path="/shoppingcart" component={ShoppingCart} />
           <Route path="/product/:pID" component={ProductDetails} />
           <Route path="/checkout" component={CheckOut} />
+          <Route path="/:pID/details" component={ProductDetails} />
         </Switch>
       </BrowserRouter>
     );
