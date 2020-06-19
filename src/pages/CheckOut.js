@@ -52,9 +52,9 @@ class CheckOut extends Component {
           Cartão de Débito
           <input
             type="radio"
-            name="cartao-debito"
+            name="cartao-credito"
             id="payment-method"
-            value="cartao-debito"
+            value="cartao-credito"
             onChange={(event) => this.selectedPayment(event.target.value)}
           />
           Cartão de Crédito
