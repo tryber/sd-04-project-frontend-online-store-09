@@ -28,6 +28,7 @@ class CategoryPanel extends Component {
               onChange={(e) => setCategory(e.target.value)}
 
             />
+            import '../style/Home.css';
             {line.name}
             <br />
           </label>
