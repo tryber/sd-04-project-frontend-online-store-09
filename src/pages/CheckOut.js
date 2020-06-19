@@ -35,12 +35,12 @@ function renderForms() {
 class CheckOut extends Component {
   render() {
     return (
-      <>
+      <div>
         {renderForms()}
         <Link to="/">
           <button type="button">VOLTAR</button>
         </Link>
-      </>
+      </div>
     );
   }
 }
