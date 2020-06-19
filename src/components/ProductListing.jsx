@@ -11,6 +11,16 @@ function buttonDetails(id) {
     </button>
   );
 }
+
+function buttonCart() {
+  return (
+    <button type="button">
+      <Link data-testid="shopping-cart-button" to="/shoppingcart">
+        Ir para o Carrinho
+      </Link>
+    </button>
+  );
+}
 class ProductListing extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +45,7 @@ class ProductListing extends React.Component {
     if (products.length === 0 && showProducts === true) {
       return <p>Nenhum produto foi encontrado</p>;
     }
+
     return (
       <div className="product-list">
         {products.map((product) => (
@@ -46,6 +57,7 @@ class ProductListing extends React.Component {
               {product.price.toFixed(2)}
             </p>
             {buttonDetails(product.id)}
+            {buttonCart()}
           </div>
         ))}
       </div>
