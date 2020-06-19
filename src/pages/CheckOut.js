@@ -64,7 +64,7 @@ class CheckOut extends Component {
   }
 
   renderFormsPersonal() {
-    const { fullname, email, cpf, phone } = this.state;
+    const { fullname, cpf } = this.state;
     return (
       <div>
         <label htmlFor="name">
@@ -78,17 +78,6 @@ class CheckOut extends Component {
             required
           />
         </label>
-        <label htmlFor="email">
-          Email
-          <input
-            type="email"
-            id="email"
-            data-testid="checkout-email"
-            value={email}
-            onChange={(event) => this.handleChange(event, 'email')}
-            required
-          />
-        </label>
         <label htmlFor="name">
           CPF
           <input
@@ -97,6 +86,25 @@ class CheckOut extends Component {
             data-testid="checkout-cpf"
             value={cpf}
             onChange={(event) => this.handleChange(event, 'cpf')}
+            required
+          />
+        </label>
+      </div>
+    );
+  }
+
+  renderFormsEmailPhone() {
+    const { email, phone } = this.state;
+    return (
+      <div>
+        <label htmlFor="email">
+          Email
+          <input
+            type="email"
+            id="email"
+            data-testid="checkout-email"
+            value={email}
+            onChange={(event) => this.handleChange(event, 'email')}
             required
           />
         </label>
@@ -155,6 +163,7 @@ class CheckOut extends Component {
         <form onSubmit={this.handleSubmit}>
           {this.renderPaymentMethods()}
           {this.renderFormsPersonal()}
+          {this.renderFormsEmailPhone()}
           {this.renderFormsAdress()}
           <Link to="/">
             <button type="button">VOLTAR</button>
