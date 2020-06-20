@@ -14,13 +14,14 @@ class ProductList extends Component {
     return (
       <div>
         <InfoControl selectedCategory={selectedCategory} items={(item) => this.setState(item)} />
-        {products.length && products.map((product) => (
+        {console.log(products.length)}
+        {(products.map((product) => (
           <ProductCard
             data-testid="product"
             product={product}
             key={product.id}
           />
-        ))}
+        )))}
 
       </div>
     );

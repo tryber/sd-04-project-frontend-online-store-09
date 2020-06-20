@@ -8,7 +8,6 @@ class InfoControl extends Component {
     this.getItems = this.getItems.bind(this);
   }
 
-
   componentDidUpdate(prevProps) {
     const { selectedCategory } = this.props;
     if (prevProps.selectedCategory !== selectedCategory) {
