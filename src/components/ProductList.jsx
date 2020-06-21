@@ -14,7 +14,6 @@ class ProductList extends Component {
     return (
       <div>
         <InfoControl selectedCategory={selectedCategory} items={(item) => this.setState(item)} />
-        {console.log(products.length)}
         {(products.map((product) => (
           <ProductCard
             data-testid="product"
