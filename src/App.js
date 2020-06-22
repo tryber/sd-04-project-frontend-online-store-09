@@ -5,6 +5,7 @@ import ShoppingCart from './pages/ShoppingCart';
 import CheckOut from './pages/CheckOut';
 import './App.css';
 import ProductDetails from './pages/ProductDetails';
+import CartButton from './components/CartButton';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends React.Component {
     const { shoppingCart } = this.state;
     return (
       <BrowserRouter>
+        <CartButton cart={shoppingCart} />
         <Switch>
           <Route path="/checkout" component={CheckOut} />
           <Route
