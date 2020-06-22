@@ -5,7 +5,7 @@ import ProductBasket from '../components/ProductBasket';
 
 class ShoppingCart extends Component {
   render() {
-    const { shoppingCart, setItemToshoppingCart } = this.props;
+    const { shoppingCart, addItemToCart } = this.props;
     if (shoppingCart.length === 0) {
       return (
         <div>
@@ -26,11 +26,11 @@ class ShoppingCart extends Component {
               price={price}
               qtd={qtd}
               availableQuantity={availableQuantity}
-              setItemToshoppingCart={setItemToshoppingCart}
+              addItemToCart={addItemToCart}
               itemID={id}
             />
           ))}
-        <Link to={{ pathname: 'payment', state: { shoppingCart } }}>
+        <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
           <button type="button" data-testid="checkout-products"> CheckOut</button>
         </Link>
 
