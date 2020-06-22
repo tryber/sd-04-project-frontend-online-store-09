@@ -9,7 +9,7 @@ class ShoppingCart extends Component {
     if (shoppingCart.length === 0) {
       return (
         <div>
-          <p data-testid="shopping-shoppingCart-empty-message">Seu carrinho está vazio</p>
+          <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
         </div>
       );
     }
