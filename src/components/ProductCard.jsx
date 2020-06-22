@@ -8,9 +8,7 @@ export class ProductCard extends Component {
     const { id, title, thumbnail, price } = product;
     return (
       <div data-testid="product">
-        <div>
-          <img src={thumbnail} alt={title} />
-        </div>
+        <img src={thumbnail} alt={title} />
         <div>
           <h4 data-testid="product-detail-name">{title}</h4>
           <h5>{id}</h5>
