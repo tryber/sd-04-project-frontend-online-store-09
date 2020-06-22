@@ -9,7 +9,7 @@ class ProductList extends Component {
   }
 
   render() {
-    const { selectedCategory } = this.props;
+    const { addItemToCart, selectedCategory } = this.props;
     const { products } = this.state;
     return (
       <div>
@@ -18,6 +18,7 @@ class ProductList extends Component {
           <ProductCard
             data-testid="product"
             product={product}
+            addItemToCart={addItemToCart}
             key={product.id}
           />
         )))}

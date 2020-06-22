@@ -16,11 +16,12 @@ class Home extends Component {
   }
 
   render() {
+    const { addItemToCart } = this.props;
     const { selectedCategory } = this.state;
     return (
       <div className="homepage">
         <CategoryPanel setCategory={this.setCategory} />
-        <ProductList selectedCategory={selectedCategory} />
+        <ProductList selectedCategory={selectedCategory} addItemToCart={addItemToCart} />
         <Link data-testid="shopping-cart-button" to="/shoppingcart">
           Carrinho de compras
         </Link>
