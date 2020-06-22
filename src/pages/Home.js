@@ -16,6 +16,7 @@ class Home extends Component {
   }
 
   render() {
+    const { setItemToCart } = this.props;
     const { selectedCategory } = this.state;
     return (
       <div className="homepage">
