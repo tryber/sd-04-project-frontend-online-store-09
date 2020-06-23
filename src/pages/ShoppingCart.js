@@ -17,9 +17,7 @@ class ShoppingCart extends Component {
         <p>Carrinho de Compras</p>
         {shoppingCart.map(
           ({ item: { id, title, thumbnail, price, availableQuantity }, qty: qtd }) => (
-            <ProductBasket
-              key={title}
-              title={title}
+            <ProductBasket key={title} title={title}
               thumbnail={thumbnail}
               price={price}
               qtd={qtd}
