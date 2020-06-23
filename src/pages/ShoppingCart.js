@@ -30,11 +30,11 @@ class ShoppingCart extends Component {
               itemID={id}
             />
           ),
-          <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
-            <button type="button" data-testid="checkout-products">
-              CheckOut
-            </button>
-          </Link>,
+          // <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
+          //   <button type="button" data-testid="checkout-products">
+          //     CheckOut
+          //   </button>
+          // </Link>,
         )}
       </div>
     );

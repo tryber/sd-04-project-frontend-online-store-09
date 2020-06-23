@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ProductBasket extends Component {
   constructor(props) {
@@ -49,6 +50,14 @@ class ProductBasket extends Component {
           -1
         </button>
         <img alt={title} src={thumbnail} />
+        <Link to="/">
+          <button type="button">VOLTAR</button>
+        </Link>
+        <Link to="/checkout">
+          <button type="button" data-testid="checkout-products">
+            Finalizar Compras
+          </button>
+        </Link>
       </div>
     );
   }
