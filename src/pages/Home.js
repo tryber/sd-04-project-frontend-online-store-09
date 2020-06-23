@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import CategoryPanel from '../components/CategoryPanel';
 import ProductList from '../components/ProductList';
 import '../styles/home.css';

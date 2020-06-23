@@ -12,11 +12,9 @@ class ShoppingCart extends Component {
         </div>
       );
     }
-
     return (
       <div>
         <p>Carrinho de Compras</p>
-        {console.log(shoppingCart)}
         {shoppingCart.map(
           ({ item: { id, title, thumbnail, price, availableQuantity }, qty: qtd }) => (
             <ProductBasket
@@ -33,7 +31,6 @@ class ShoppingCart extends Component {
         )}
         <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
           <button type="button" data-testid="checkout-products">
-            {' '}
             CheckOut
           </button>
         </Link>

@@ -11,7 +11,7 @@ class ProductBasket extends Component {
 
   addOneItem() {
     const { addItemToCart, itemID, availableQuantity } = this.props;
-    let { quantity: qtd } = this.state;
+    const { quantity: qtd } = this.state;
     if (qtd < availableQuantity) {
       console.log(qtd);
       this.setState({ quantity: qtd + 1 });
