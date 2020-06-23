@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ProductBasket from '../components/ProductBasket';
 
-
 class ShoppingCart extends Component {
   render() {
     const { shoppingCart, addItemToCart } = this.props;
@@ -17,8 +16,9 @@ class ShoppingCart extends Component {
     return (
       <div>
         <p>Carrinho de Compras</p>
-        {shoppingCart
-          .map(({ item: { id, title, thumbnail, price, availableQuantity }, qty: qtd }) => (
+        {console.log(shoppingCart)}
+        {shoppingCart.map(
+          ({ item: { id, title, thumbnail, price, availableQuantity }, qty: qtd }) => (
             <ProductBasket
               key={title}
               title={title}
@@ -29,12 +29,14 @@ class ShoppingCart extends Component {
               addItemToCart={addItemToCart}
               itemID={id}
             />
-          ))}
+          ),
+        )}
         <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
-          <button type="button" data-testid="checkout-products"> CheckOut</button>
+          <button type="button" data-testid="checkout-products">
+            {' '}
+            CheckOut
+          </button>
         </Link>
-
-
       </div>
     );
   }

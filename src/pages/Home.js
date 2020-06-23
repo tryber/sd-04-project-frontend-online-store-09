@@ -22,9 +22,6 @@ class Home extends Component {
       <div className="homepage">
         <CategoryPanel setCategory={this.setCategory} />
         <ProductList selectedCategory={selectedCategory} addItemToCart={addItemToCart} />
-        <Link data-testid="shopping-cart-button" to="/shoppingcart">
-          Carrinho de compras
-        </Link>
       </div>
     );
   }
