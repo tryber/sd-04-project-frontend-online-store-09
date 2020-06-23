@@ -1,7 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { useState, useEffect } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
 
 export default function CartButton(props) {
   const [cart, setCart] = useState([]);

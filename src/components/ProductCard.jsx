@@ -12,7 +12,7 @@ export class ProductCard extends Component {
         <div>
           <h4 data-testid="product-detail-name">{title}</h4>
           <h5>{id}</h5>
-          <h5>{`R$ ${price}`}</h5>
+          <h5>{`R$ ${price.toFixed(2)}`}</h5>
           <Link
             data-testid="product-detail-link"
             to={{ pathname: `${id}/details/`, state: { product } }}

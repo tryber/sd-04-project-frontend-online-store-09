@@ -43,15 +43,15 @@ class SearchBar extends React.Component {
     return (
       <div>
         <center>
-          <div className="top-bar">
-            <div className="searchbar">
+          <div>
+            <div>
               {this.renderSearchValue()}
               <button data-testid="query-button" type="button" onClick={() => this.buttonSearch()}>
                 PESQUISAR
               </button>
             </div>
           </div>
-          <div className="product-sidebar">{searchValue && <ProductListing item={item} />}</div>
+          <div>{searchValue && <ProductListing item={item} />}</div>
         </center>
       </div>
     );

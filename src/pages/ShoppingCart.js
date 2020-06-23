@@ -12,9 +12,8 @@ function emptyCart() {
 class ShoppingCart extends Component {
   render() {
     const { shoppingCart, addItemToCart } = this.props;
-    if (shoppingCart.length === 0) {
-      emptyCart();
-    }
+    if (shoppingCart.length === 0) return emptyCart();
+
     return (
       <div>
         <p>Carrinho de Compras</p>
@@ -35,7 +34,7 @@ class ShoppingCart extends Component {
             <button type="button" data-testid="checkout-products">
               CheckOut
             </button>
-          </Link>,
+          </Link>
         )}
       </div>
     );

@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../services/api';
@@ -23,7 +25,7 @@ class ProductDetails extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <React.Fragment>
+      <>
         <Link to="/">Home</Link>
         <h1 data-testid="product-detail-name">{data.title} </h1>
         <h1> - R$ {data.price}</h1>
@@ -31,7 +33,7 @@ class ProductDetails extends React.Component {
         <Link data-testid="shopping-cart-button" to="/shoppingcart">
           Carrinho de compras
         </Link>
-      </React.Fragment>
+      </>
     );
   }
 }
