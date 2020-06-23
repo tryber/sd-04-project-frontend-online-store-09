@@ -29,12 +29,15 @@ class App extends React.Component {
       this.setState({ shoppingCart: cart });
     } else {
       let qtd;
-      if (qty === 0) { qtd = 1; } else { qtd = qty; }
+      if (qty === 0) {
+        qtd = 1;
+      } else {
+        qtd = qty;
+      }
 
       this.setState({ shoppingCart: [...shoppingCart, { item, qty: qtd }] });
     }
   }
-
 
   render() {
     const { shoppingCart } = this.state;
@@ -46,10 +49,7 @@ class App extends React.Component {
           <Route
             path="/shoppingcart"
             render={() => (
-              <ShoppingCart
-                shoppingCart={shoppingCart}
-                addItemToCart={this.addItemToCart}
-              />
+              <ShoppingCart shoppingCart={shoppingCart} addItemToCart={this.addItemToCart} />
             )}
           />
           <Route path="/:pID/details" component={ProductDetails} />

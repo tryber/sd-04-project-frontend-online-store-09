@@ -8,7 +8,6 @@ const formSection = {
   phone: '',
   cep: '',
   adress: '',
-  selectedPayment: '',
 };
 
 class CheckOut extends Component {
@@ -32,7 +31,6 @@ class CheckOut extends Component {
   }
 
   renderPaymentMethods() {
-    const { selectedPayment } = this.state;
     return (
       <div>
         <p>Método de pagamento</p>
@@ -40,22 +38,22 @@ class CheckOut extends Component {
           <input
             type="radio"
             id="payment-method"
-            value={selectedPayment}
-            onChange={(event) => this.selectedPayment(event.target.value)}
+            value="boleto"
+            onChange={(event) => this.handleChange(event, 'boleto')}
           />
           Boleto
           <input
             type="radio"
             id="payment-method"
             value="cartao-debito"
-            onChange={(event) => this.selectedPayment(event.target.value)}
+            onChange={(event) => this.handleChange(event, 'cartao-debito')}
           />
           Cartão de Débito
           <input
             type="radio"
             id="payment-method"
             value="cartao-credito"
-            onChange={(event) => this.selectedPayment(event.target.value)}
+            onChange={(event) => this.handleChange(event, 'cartao-credito')}
           />
           Cartão de Crédito
         </label>
@@ -153,10 +151,6 @@ class CheckOut extends Component {
     );
   }
 
-  // renderAlert() {
-  //   alert('Compra finalizada com sucesso!');
-  // }
-
   render() {
     return (
       <div>
@@ -168,9 +162,9 @@ class CheckOut extends Component {
           <Link to="/">
             <button type="button">VOLTAR</button>
           </Link>
-          {/* <button type="submit" onClick={this.renderAlert()}>
-          Confirmar Compras
-        </button> */}
+          <Link to="/checkout">
+            <button type="button">Finalizar Compras</button>
+          </Link>
         </form>
       </div>
     );

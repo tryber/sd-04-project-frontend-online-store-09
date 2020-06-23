@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import ProductBasket from '../components/ProductBasket';
 
 function emptyCart() {
@@ -12,9 +11,8 @@ function emptyCart() {
 class ShoppingCart extends Component {
   render() {
     const { shoppingCart, addItemToCart } = this.props;
-    if (shoppingCart.length === 0) {
-      emptyCart();
-    }
+    if (shoppingCart.length === 0) return emptyCart();
+
     return (
       <div>
         <p>Carrinho de Compras</p>
@@ -31,11 +29,11 @@ class ShoppingCart extends Component {
               itemID={id}
             />
           ),
-          <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
-            <button type="button" data-testid="checkout-products">
-              CheckOut
-            </button>
-          </Link>,
+          // <Link to={{ pathname: 'checkout', state: { shoppingCart } }}>
+          //   <button type="button" data-testid="checkout-products">
+          //     CheckOut
+          //   </button>
+          // </Link>,
         )}
       </div>
     );
