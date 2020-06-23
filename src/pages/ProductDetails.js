@@ -25,7 +25,7 @@ class ProductDetails extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <>
+      <div>
         <Link to="/">Home</Link>
         <h1 data-testid="product-detail-name">{data.title} </h1>
         <h1> - R$ {data.price}</h1>
@@ -33,7 +33,7 @@ class ProductDetails extends React.Component {
         <Link data-testid="shopping-cart-button" to="/shoppingcart">
           Carrinho de compras
         </Link>
-      </>
+      </div>
     );
   }
 }

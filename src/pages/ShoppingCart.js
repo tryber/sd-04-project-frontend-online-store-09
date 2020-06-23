@@ -34,7 +34,7 @@ class ShoppingCart extends Component {
             <button type="button" data-testid="checkout-products">
               CheckOut
             </button>
-          </Link>
+          </Link>,
         )}
       </div>
     );
