@@ -4,11 +4,11 @@ h1 , h2 , h3 , h4 , h5 , div , p , button , img {
 }
 
 ::selection {
-  background: rgb(113, 219, 212);
+  background: #fee5a5;
 }
 
 .product-card-btn {
-  background-color: rgb(251, 232, 148);
+  background-color: #fee5a5;;
   border: none;
   color: black;
   cursor: pointer;
@@ -55,7 +55,7 @@ h1 , h2 , h3 , h4 , h5 , div , p , button , img {
 }
 
 .product-card-link:hover {
-  color: rgb(113, 219, 212);
+  color: #fee5a5;
   text-decoration: underline;
 }
 
