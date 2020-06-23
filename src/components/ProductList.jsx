@@ -22,7 +22,6 @@ class ProductList extends Component {
             key={product.id}
           />
         )))}
-
       </div>
     );
   }

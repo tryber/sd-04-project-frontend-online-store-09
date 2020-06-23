@@ -19,16 +19,15 @@ export class ProductCard extends Component {
           >
             Detalhes
           </Link>
-          <Link data-testid="shopping-cart-button" to="/shoppingcart">
-            <button
-              className="product-card-btn"
-              type="button"
-              data-testid="product-add-to-cart"
-              onClick={() => addItemToCart({ id, title, thumbnail, price, availableQuantity }, 1)}
-            >
-              Adicionar ao Carrinho
-            </button>
-          </Link>
+
+          <button
+            className="product-card-btn"
+            type="button"
+            data-testid="product-add-to-cart"
+            onClick={() => addItemToCart({ id, title, thumbnail, price, availableQuantity }, 1)}
+          >
+            Adicionar ao Carrinho
+          </button>
         </div>
       </div>
     );
