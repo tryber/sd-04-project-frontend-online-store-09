@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../services/api';
+import Evaluation from '../components/Evaluation';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class ProductDetails extends React.Component {
         <Link data-testid="shopping-cart-button" to="/shoppingcart">
           Carrinho de compras
         </Link>
+        <Evaluation productId={data.id} />
       </div>
     );
   }
