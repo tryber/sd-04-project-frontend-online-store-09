@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../services/api';
+import '../styles/categoryPanel.css';
 
 class CategoryPanel extends Component {
   constructor(props) {
@@ -16,8 +17,8 @@ class CategoryPanel extends Component {
     const { categoryList } = this.state;
     const { setCategory } = this.props;
     return (
-      <div>
-        <p>Categorias: </p>
+      <div className="category-wrap">
+        <p className="category-wrap-title">Categorias: </p>
         {categoryList.map((line) => (
           <label key={line.id} htmlFor="input">
             <input
