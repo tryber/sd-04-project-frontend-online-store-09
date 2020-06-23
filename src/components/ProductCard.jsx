@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import FreeShipping from './FreeShipping';
+import '../styles/productCard.css';
 
 export class ProductCard extends Component {
   render() {
     const { product, addItemToCart } = this.props;
     const { available_quantity: availableQuantity } = product;
-    const { id, title, thumbnail, price } = product;
+    const { id, title, thumbnail, price, shipping } = product;
+    const { free_shipping: freeShipping } = shipping;
     return (
-      <div data-testid="product">
-        <img src={thumbnail} alt={title} />
-        <div>
-          <h4 data-testid="product-detail-name">{title}</h4>
-          <h5>{id}</h5>
-          <h5>{`R$ ${price.toFixed(2)}`}</h5>
-          <Link
-            data-testid="product-detail-link"
-            to={{ pathname: `${id}/details/`, state: { product } }}
-          >
+      <div className="product-card-container" data-testid="product">
+        <div className="product-card-left">
+          <img className="product-card-thumbnail" src={thumbnail} alt={title} />
+        </div>
+        <div className="product-card-right">
+          <div className="product-card-shipping">
+            {freeShipping && <FreeShipping />}
+          </div>
+          <h4 className="product-card-title" data-testid="product-detail-name">{title}</h4>
+          <h5 className="product-card-id">{id}</h5>
+          <h5 className="product-card-price">{`R$ ${price}`}</h5>
+          <Link data-testid="product-detail-link" to={{ pathname: `${id}/details/`, state: { product } }}>
             Detalhes
           </Link>
-
           <button
             className="product-card-btn"
             type="button"
